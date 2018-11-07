@@ -1,0 +1,1 @@
+web: gunicorn mercaempleado.wsgi --log-file -
