@@ -75,7 +75,7 @@
               <li><a href="#">opcion 5</a></li>
             </ul>
           </li>
-          <li><a href="#contact"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
         </ul>
         {% endblock %}
       </nav><!-- #nav-menu-container -->
@@ -86,8 +86,8 @@
   <!--==========================
     Intro Section
   ============================-->
+  {% block intro %}
   <section id="intro">
-    {% block intro %}
     <div class="intro-container">
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
 
@@ -169,11 +169,11 @@
 
       </div>
     </div>
-    {% endblock %}
   </section><!-- #intro -->
+  {% endblock %}
 
+{% block content %}
   <main id="main">
-  {% block content %}
     <section id="contact" class="section-bg wow fadeInUp">
       
       <div class="container">
@@ -239,8 +239,8 @@
 
       </div>
     </section><!-- #contact -->
-    {% endblock %}
   </main>
+  {% endblock %}
 
   <!--==========================
     Footer
