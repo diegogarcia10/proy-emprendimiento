@@ -20,6 +20,20 @@ a {
   transition: 0.5s;
 }
 
+
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: orange;
+}
+
+
+
+
+
 a:hover,
 a:active,
 a:focus {

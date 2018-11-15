@@ -7,3 +7,6 @@ def home(request):
 
 def index(request):
 	return render(request,'base/base.html')
+
+def busqueda(request):
+	return render(request,'busquedaTrabajador/busqtrabajador.html')

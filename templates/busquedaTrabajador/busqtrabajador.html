@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Buscar Empleado{% endblock %}
+
+
+
+
+{% block intro %}
+<section id="intro" style="height: 100px;">
+</section>
+{% endblock %}
+{% block content %}    
+<hr/>
+<div class="row">
+	<div >
+		<nav class="col-lg-4 col-md-6 " style="width: 25%; margin-left: 100px; margin-right: 100px">Categorias
+		  <a class="nav-link active" href="#">Electricista</a>
+		  <a class="nav-link" href="#">Mecanico</a>
+		  <a class="nav-link" href="#">Carpintero</a>
+		  <a class="nav-link " href="#">Fontanero</a>
+		</nav>
+	</div>
+	<div class="col-md-6 ">
+		<hr/>
+             <div> <!--primer usuario--> 
+                      	<div class="" style="float: left; width: 150px; margin-right: 20px">
+                      		<img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                      		<p><a href="#">El Eléctrico Gómez</a><br/>
+                      		   <muted>+503 7485-9562</muted>
+                      		</p>
+                      	</div>
+                      	<div class=" detalles">
+                      		<label>Detalles</label><br>
+                      		Soy una persona comprometida a cumplir con responsabilidad mis trabajos.
+							<form >
+							  <p class="clasificacion">
+							    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+							    --><label for="radio1">★</label><!--
+							    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+							    --><label for="radio2">★</label><!--
+							    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+							    --><label for="radio3">★</label><!--
+							    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+							    --><label for="radio4">★</label><!--
+							    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+							    --><label for="radio5">★</label>
+							  </p>
+							</form>
+                      	</div>
+
+             </div><!--fin primer usuario--> 
+
+            <hr>
+
+            
+	</div>
+
+
+
+</div>
+<hr/>
+{% endblock %}
