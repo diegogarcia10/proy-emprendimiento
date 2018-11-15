@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.urls import path
 from django.contrib.auth.views import login, logout_then_login
-from .views import *
+from .views import home, index
+from mercaempleado.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +27,8 @@ urlpatterns = [
     url(r'^home/', home, name='home'),
     url(r'^accounts/login/', login, {'template_name':'autentificacion/login.html'}, name='login'),
     url(r'^logout/',logout_then_login, name='logout'),
+
     url(r'^buscar/',busqueda, name='buscar-empleado'),
+
+    url(r'^categorias/$',categorias,name="categorias"),
 ]
