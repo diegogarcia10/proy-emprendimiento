@@ -32,6 +32,33 @@ label {
 
 
 
+.contenedor {
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  overflow: auto;
+  font-family: 'Open Sans';
+  border-radius: 4px;
+}
+
+
+
+
+/* Scroll Personalizado */
+
+.contenedor::-webkit-scrollbar {
+  width: 7px;
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+  background: #ff9d00;
+  border-radius: 10px;
+}
+
+
+
 
 
 a:hover,
