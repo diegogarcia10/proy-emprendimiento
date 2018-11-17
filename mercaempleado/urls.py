@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^buscar/',busqueda, name='buscar-empleado'),
 
     url(r'^categorias/$',categorias,name="categorias"),
+
+    url(r'^registrarse/$',registrarse,name="registrarse"),
 ]
