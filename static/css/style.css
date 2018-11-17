@@ -20,6 +20,9 @@ a {
   transition: 0.5s;
 }
 
+#registroForm{
+  margin-left: 300px;
+}
 
 
 input[type="radio"] {

@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
+from .forms import RegistroForm
 
 
 def home(request):
@@ -21,5 +22,7 @@ def categorias(request):
 
 class RegistroUsuario(CreateView):
 	model = User
-	template_name = 'autentificacion/registrar.html'	
+	template_name = 'autentificacion/registrar.html'
+	form_class = RegistroForm
+	success_url = reverse_lazy('login')	
 

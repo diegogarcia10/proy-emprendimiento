@@ -34,5 +34,5 @@ urlpatterns = [
 
     url(r'^categorias/$',categorias,name="categorias"),
 
-    url(r'^registrarse/$',registrarse,name="registrarse"),
+    url(r'^registrarse/$',RegistroUsuario.as_view(),name="registrarse"),
 ]
