@@ -182,3 +182,65 @@
 
 })(jQuery);
 
+function agregarExp(){ 
+  var divRow = document.createElement("div");
+  var divGroup = document.createElement("div");
+  var input = document.createElement("input");
+  var divCont = document.getElementById("experiencia");
+  var label = document.createElement("label");
+  var node = document.createTextNode("Habilidad");
+  
+
+  divRow.setAttribute("class","form-row");
+  divGroup.setAttribute("class","form-group col-md-8");
+  input.setAttribute("class","form-control");
+  input.setAttribute("placeholder","Ingrese la habilidad");
+  
+  label.appendChild(node);
+  divGroup.appendChild(label);
+  divGroup.appendChild(input);
+  divRow.appendChild(divGroup);
+  divCont.appendChild(divRow);
+}
+
+function agregarEducacion(){
+  var divRow = document.createElement("div");
+  var divGroup = document.createElement("div");
+  var input = document.createElement("input");
+  var divCont = document.getElementById("educacion");
+  var label = document.createElement("label");
+  var node = document.createTextNode("Habilidad");
+  
+
+  divRow.setAttribute("class","form-row");
+  divGroup.setAttribute("class","form-group col-md-8");
+  input.setAttribute("class","form-control");
+  input.setAttribute("placeholder","Ingrese la habilidad");
+  
+  label.appendChild(node);
+  divGroup.appendChild(label);
+  divGroup.appendChild(input);
+  divRow.appendChild(divGroup);
+  divCont.appendChild(divRow);
+}
+
+function agregarHabilidad(){
+  var divRow = document.createElement("div");
+  var divGroup = document.createElement("div");
+  var input = document.createElement("input");
+  var divCont = document.getElementById("habilidades");
+  var label = document.createElement("label");
+  var node = document.createTextNode("Habilidad");
+  
+
+  divRow.setAttribute("class","form-row");
+  divGroup.setAttribute("class","form-group col-md-8");
+  input.setAttribute("class","form-control");
+  input.setAttribute("placeholder","Ingrese la habilidad");
+  
+  label.appendChild(node);
+  divGroup.appendChild(label);
+  divGroup.appendChild(input);
+  divRow.appendChild(divGroup);
+  divCont.appendChild(divRow); 
+}

@@ -6,3 +6,7 @@ from django.views.generic import ListView,CreateView,UpdateView,DeleteView,Templ
 
 class vistaPerfil(TemplateView):
 	template_name="perfil/perfil.html"
+
+def generarCurriculum(request):
+	return render(request, 'perfil/generarCurriculum.html')
+
