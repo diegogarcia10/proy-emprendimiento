@@ -218,6 +218,8 @@ function agregarExp(){
   divGroupInicio.setAttribute("class","form-group col-md-8");
   divGroupFinal.setAttribute("class","form-group col-md-8");
   divContExp.setAttribute("style","padding:10px; border:solid; margin-right:400px; margin-botton:15px; display:center; vertical-align:middle;");
+  inputAñoInicio.setAttribute("type","date");
+  inputAñoFinal.setAttribute("type","date");
 
   inputEmpresa.setAttribute("class","form-control");
   inputEmpresa.setAttribute("placeholder","Nombre de la empresa");
@@ -261,24 +263,47 @@ function agregarExp(){
 }
 
 function agregarEducacion(){
+  var divContExp = document.createElement("div");
   var divRow = document.createElement("div");
   var divGroup = document.createElement("div");
+  var divGroupGrado = document.createElement("div");
+  var divGroupEsp = document.createElement("div");
   var input = document.createElement("input");
   var divCont = document.getElementById("educacion");
   var label = document.createElement("label");
-  var node = document.createTextNode("Habilidad");
+  var node = document.createTextNode("Institucion");
+  var inputGrado = document.createElement("input");
+  var labelGrado = document.createElement("label");
+  var nodeGrado = document.createTextNode("Grado academico");
+  var inputEsp = document.createElement("input");
+  var labelEsp = document.createElement("label");
+  var nodeEsp = document.createTextNode("Especializacion");
   
-
+  divContExp.setAttribute("style","padding:10px; border:solid; margin-right:400px; margin-botton:15px; display:center; vertical-align:middle;");
   divRow.setAttribute("class","form-row");
   divGroup.setAttribute("class","form-group col-md-8");
+  divGroupGrado.setAttribute("class","form-group col-md-8");
+  divGroupEsp.setAttribute("class","form-group col-md-8");
   input.setAttribute("class","form-control");
-  input.setAttribute("placeholder","Ingrese la habilidad");
+  input.setAttribute("placeholder","Ingrese el nombre de la institucion");
+  inputGrado.setAttribute("class","form-control");
+  inputGrado.setAttribute("placeholder","Ingrese el grado academico");
+  inputEsp.setAttribute("class","form-control");
+  inputEsp.setAttribute("placeholder","Ingrese la Especializacion obtenida");
   
   label.appendChild(node);
+  labelGrado.appendChild(nodeGrado);
+  labelEsp.appendChild(nodeEsp);
   divGroup.appendChild(label);
   divGroup.appendChild(input);
-  divRow.appendChild(divGroup);
-  divCont.appendChild(divRow);
+  divGroupGrado.appendChild(labelGrado);
+  divGroupGrado.appendChild(inputGrado);
+  divGroupEsp.appendChild(labelEsp);
+  divGroupEsp.appendChild(inputEsp);
+  divContExp.appendChild(divGroup);
+  divContExp.appendChild(divGroupGrado);
+  divContExp.appendChild(divGroupEsp);
+  divCont.appendChild(divContExp);
 }
 
 function agregarHabilidad(){
@@ -290,7 +315,7 @@ function agregarHabilidad(){
   var label = document.createElement("label");
   var node = document.createTextNode("Habilidad");
   
-  divContExp.setAttribute("style","padding:10px; border:solid; margin-right:200px; margin-botton:15px; display:center; vertical-align:middle;");
+  divContExp.setAttribute("style","padding:10px; border:solid; margin-right:400px; margin-botton:15px; display:center; vertical-align:middle;");
   divRow.setAttribute("class","form-row");
   divGroup.setAttribute("class","form-group col-md-8");
   input.setAttribute("class","form-control");
@@ -302,4 +327,15 @@ function agregarHabilidad(){
   divRow.appendChild(divGroup);
   divContExp.appendChild(divRow); 
   divCont.appendChild(divContExp);
+}
+
+function limpiar(){
+  
+  var opcion = confirm("¿Desea limpiar el formulario?");
+  if (opcion) {
+    document.getElementById("formCV").reset();
+    document.getElementById("txtNombre").focus();
+  }else{
+
+  }
 }
