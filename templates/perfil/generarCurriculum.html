@@ -39,7 +39,7 @@
 	<div class="form-row">
 			<div class="form-group col-md-3">
 		      <label for="inputCiudad">Ciudad</label>
-		      <input type="text" class="form-control" id="inputCiudad">
+		      <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad actual de residencia">
 		    </div>
 		    <div class="form-group col-md-3">
 		      <label for="inputDepto">Departamento</label>
@@ -56,7 +56,7 @@
 		    </div>
 		    <div class="form-group col-md-2">
 		      <label for="inputCodigo">Codigo depto.</label>
-		      <input type="text" class="form-control" id="inputCodigo">
+		      <input type="text" class="form-control" id="inputCodigo" placeholder="codigo depto opcional">
 		    </div>
 	</div>
 	<div class="form-row">
@@ -68,31 +68,33 @@
 	<div class="form-row">
 		<div class="form-group col-md-4">
 			<label for="addXP"><h4 class="cvH">Agregar experiencia</h4></label>
-			&nbsp;&nbsp;<a href="#" onclick="agregarExp();"><i class="fas fa-plus-circle fa-2x"></i></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="agregarExp();"><i class="fas fa-plus-circle fa-2x"></i></a>
 		</div>
 	</div>
 	<div id="experiencia">
 		
-	</div>
+	</div><br>
 	<div class="form-row">
 		<div class="form-group col-md-4">
-			<label for="addEDU"><h4 class="cvH">Añadir Educacion</h4></label>
+			<label for="addEDU"><h4 class="cvH">Agregar Educacion</h4></label>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="agregarEducacion();"><i class="fas fa-plus-circle fa-2x"></i></a>
 		</div>
 	</div>
 	<div id="educacion">
 		
-	</div>
+	</div><br>
 	<div class="form-row">
 		<div class="form-group col-md-4">
-				<label for="addHab"><h4 class="cvH">Añadir Habilidad</h4></label>
+				<label for="addHab"><h4 class="cvH">Agregar Habilidad</h4></label>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="agregarHabilidad();"><i class="fas fa-plus-circle fa-2x"></i></a>
 		</div>
 	</div>
 	<div id="habilidades">
 		
 	</div>
+	<br>
 	<input type="button" class="btn btn-danger" value="Generar CV">
+	&nbsp;&nbsp;<input type="button" class="btn btn-secondary" value="Limpiar">
 </form>
 <br><br>
 {% endblock %}

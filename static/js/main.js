@@ -183,24 +183,81 @@
 })(jQuery);
 
 function agregarExp(){ 
-  var divRow = document.createElement("div");
-  var divGroup = document.createElement("div");
-  var input = document.createElement("input");
+  var divContExp = document.createElement("div");
+  var divGroupEmpresa = document.createElement("div");
+  var divGroupUbicacion = document.createElement("div");
+  var divGroupPuesto = document.createElement("div");
+  var divGroupTareas = document.createElement("div");
+  var divGroupInicio = document.createElement("div");
+  var divGroupFinal = document.createElement("div");
+  var inputPuesto = document.createElement("input");
+  var inputEmpresa = document.createElement("input");
+  var inputEmpresaUbicacion = document.createElement("input");
+  var inputAñoInicio = document.createElement("input");
+  var inputAñoFinal = document.createElement("input");
+  var inputTareas = document.createElement("input");
+  var labelPuesto = document.createElement("label");
+  var nodePuesto = document.createTextNode("Puesto que ejercia");
+  var labelEmpresa = document.createElement("label");
+  var nodeEmpresa = document.createTextNode("Empresa en la que trabajaba");
+  var labelUbicacion = document.createElement("label");
+  var nodeUbicacion = document.createTextNode("Ubicacion de la empresa");
+  var labelAñoInicio = document.createElement("label");
+  var nodeAñoInicio = document.createTextNode("Fecha en que inicio");
+  var labelAñoFinal = document.createElement("label");
+  var nodeAñoFinal = document.createTextNode("Fecha en que finalizo");
+  var labelTareas = document.createElement("label");
+  var nodeTareas = document.createTextNode("Tareas que realizaba");
   var divCont = document.getElementById("experiencia");
-  var label = document.createElement("label");
-  var node = document.createTextNode("Habilidad");
   
 
-  divRow.setAttribute("class","form-row");
-  divGroup.setAttribute("class","form-group col-md-8");
-  input.setAttribute("class","form-control");
-  input.setAttribute("placeholder","Ingrese la habilidad");
+  divGroupEmpresa.setAttribute("class","form-group col-md-8");
+  divGroupUbicacion.setAttribute("class","form-group col-md-8");
+  divGroupPuesto.setAttribute("class","form-group col-md-8");
+  divGroupTareas.setAttribute("class","form-group col-md-8");
+  divGroupInicio.setAttribute("class","form-group col-md-8");
+  divGroupFinal.setAttribute("class","form-group col-md-8");
+  divContExp.setAttribute("style","padding:10px; border:solid; margin-right:400px; margin-botton:15px; display:center; vertical-align:middle;");
+
+  inputEmpresa.setAttribute("class","form-control");
+  inputEmpresa.setAttribute("placeholder","Nombre de la empresa");
+  inputEmpresaUbicacion.setAttribute("class","form-control");
+  inputEmpresaUbicacion.setAttribute("placeholder","Ubicacion de la empresa");
+  inputPuesto.setAttribute("class","form-control");
+  inputPuesto.setAttribute("placeholder","Nombre del puesto que ejercia");
+  inputTareas.setAttribute("class","form-control");
+  inputTareas.setAttribute("placeholder","Ingrese las tareas separadas por ','");
+  inputAñoInicio.setAttribute("class","form-control");
+  inputAñoInicio.setAttribute("placeholder","dd/mm/aaaa");
+  inputAñoFinal.setAttribute("class","form-control");
+  inputAñoFinal.setAttribute("placeholder","dd/mm/aaaa");
   
-  label.appendChild(node);
-  divGroup.appendChild(label);
-  divGroup.appendChild(input);
-  divRow.appendChild(divGroup);
-  divCont.appendChild(divRow);
+  
+  labelEmpresa.appendChild(nodeEmpresa);
+  labelUbicacion.appendChild(nodeUbicacion);
+  labelPuesto.appendChild(nodePuesto);
+  labelTareas.appendChild(nodeTareas);
+  labelAñoInicio.appendChild(nodeAñoInicio);
+  labelAñoFinal.appendChild(nodeAñoFinal);
+  divGroupEmpresa.appendChild(labelEmpresa);
+  divGroupEmpresa.appendChild(inputEmpresa);
+  divGroupUbicacion.appendChild(labelUbicacion);
+  divGroupUbicacion.appendChild(inputEmpresaUbicacion);
+  divGroupPuesto.appendChild(labelPuesto);
+  divGroupPuesto.appendChild(inputPuesto);
+  divGroupTareas.appendChild(labelTareas);
+  divGroupTareas.appendChild(inputTareas);
+  divGroupInicio.appendChild(labelAñoInicio);
+  divGroupInicio.appendChild(inputAñoInicio);
+  divGroupFinal.appendChild(labelAñoFinal);
+  divGroupFinal.appendChild(inputAñoFinal);
+  divContExp.appendChild(divGroupEmpresa);
+  divContExp.appendChild(divGroupUbicacion);
+  divContExp.appendChild(divGroupPuesto);
+  divContExp.appendChild(divGroupTareas);
+  divContExp.appendChild(divGroupInicio);
+  divContExp.appendChild(divGroupFinal);
+  divCont.appendChild(divContExp);
 }
 
 function agregarEducacion(){
@@ -225,6 +282,7 @@ function agregarEducacion(){
 }
 
 function agregarHabilidad(){
+  var divContExp = document.createElement("div");
   var divRow = document.createElement("div");
   var divGroup = document.createElement("div");
   var input = document.createElement("input");
@@ -232,7 +290,7 @@ function agregarHabilidad(){
   var label = document.createElement("label");
   var node = document.createTextNode("Habilidad");
   
-
+  divContExp.setAttribute("style","padding:10px; border:solid; margin-right:200px; margin-botton:15px; display:center; vertical-align:middle;");
   divRow.setAttribute("class","form-row");
   divGroup.setAttribute("class","form-group col-md-8");
   input.setAttribute("class","form-control");
@@ -242,5 +300,6 @@ function agregarHabilidad(){
   divGroup.appendChild(label);
   divGroup.appendChild(input);
   divRow.appendChild(divGroup);
-  divCont.appendChild(divRow); 
+  divContExp.appendChild(divRow); 
+  divCont.appendChild(divContExp);
 }
