@@ -1,0 +1,134 @@
+{% extends 'base/base.html' %}
+
+
+{% block intro %}
+<section id="intro" style="height: 100px;">
+  
+</section>
+{% endblock %}
+
+{% block content %}
+<br>
+<h2 align="center">Crear Publicacion de Oferta de Trabajo</h2>
+<br>
+<div>
+	<form style="margin-left: 300px;" id="formCO">
+		<div>
+			<h2>Informacion de oferta</h2>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label for="inputNombre">Nombre de oferta</label>
+				<input type="text" class="form-control" name="txtNombre" id="inputNombre" placeholder="Nombre">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="inputAreEmpresa">Area de la empresa</label>
+				<input type="text" class="form-control" name="txtAreaEmpresa" id="inputAreEmpresa" placeholder="Area empresa">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+		      <label for="inputCargoSolicitado">Cargo Solicitado</label>
+		      <input type="text" class="form-control" id="inputCargoSolicitado" placeholder="Cargo Solitida">
+			</div>
+			<div class="form-group col-md-4">
+		      <label for="inputTipoContratacion">Tipo de contratacion</label>
+		      <input type="text" class="form-control" id="inputTipoContratacion" placeholder="Tipo de Contratacion">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-3">
+		      <label for="inputDepto">Departamento</label>
+		      <select id="inputDepto" class="form-control">
+		        <option selected>...Seleccione...</option>
+		        <option>Ahuachapán</option>
+		        <option>Cabañas</option>
+		        <option>Chalatenango</option>
+		        <option>Cuscatlán</option>
+		        <option>La Libertad</option>
+		        <option>La Paz</option>
+		        <option>La Uniooón</option>
+		        <option>Morazán</option>
+		        <option>Santa Ana</option>
+		        <option>Santa Miguel</option>
+		        <option>San Salvador</option>
+		        <option>San Vicente</option>
+		        <option>Sonsonate</option>       
+		        <option>Usulután</option>	        
+		      </select>
+		    </div>
+		    <div class="form-group col-md-2">
+				<label for="inputNumeroPuestos">Puestos vacantes</label>
+				<input class="form-control" type="number" value="1" id="inputNumeroPuestos">	     
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-8">
+				<label for="inputDescripcion">Descripcion de la Oferta</label>
+				<textarea class="form-control" id="inputDescripcion" rows="3"></textarea>			
+			</div>
+		</div>
+		<div>
+			<h2>Perfil de Empleado</h2>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label for="inputNivelAcademico">Nivel Academico</label>
+				<input type="text" class="form-control" id="inputNivelAcademico" placeholder="Estudios Necesarios">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="inputExperiencia">Experiencia Laboral</label>
+				<input type="text" class="form-control" id="inputExperiencia" placeholder="Experiencia Requerida">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-3">
+	        <label for="inputGenero">Género</label>
+	          <select id="inputGenero" class="form-control">
+	          <option selected>...Seleccione...</option>
+	          <option>Masculino</option>
+	          <option>Femenino</option>
+	          <option>Indiferente</option>    
+	          </select>
+		    </div>
+		    <div class="form-group col-md-2">
+		      <label for="inputEdad">Edad</label>
+		      <input type="text" class="form-control" id="inputEdad" placeholder="Edad">
+		    </div>
+		    <div class="form-group col-md-3">
+		      <label for="inputDomicilio">Domicilio</label>
+		      <select id="inputDomicilio" class="form-control">
+		        <option selected>...Seleccione...</option>
+		        <option>Ahuachapán</option>
+		        <option>Cabañas</option>
+		        <option>Chalatenango</option>
+		        <option>Cuscatlán</option>
+		        <option>La Libertad</option>
+		        <option>La Paz</option>
+		        <option>La Uniooón</option>
+		        <option>Morazán</option>
+		        <option>Santa Ana</option>
+		        <option>Santa Miguel</option>
+		        <option>San Salvador</option>
+		        <option>San Vicente</option>
+		        <option>Sonsonate</option>       
+		        <option>Usulután</option>	        
+		      </select>
+		    </div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-8">
+				<label for="inputRequisitos">Otros Requisitos</label>
+				<textarea class="form-control" id="inputRequisitos" rows="3"></textarea>			
+			</div>
+		</div>
+		<div>
+			<br>
+			<input type="button" class="btn btn-primary" value="Crear Oferta">
+			<input type="button" class="btn btn-secondary"  value="Limpiar">
+		</div>		
+	</form>
+</div>
+
+<br><br>
+{% endblock %}
