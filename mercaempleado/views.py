@@ -19,6 +19,7 @@ def busqueda(request):
 
 def categorias(request):
 	return render(request,'categorias/categorias.html')	
+<<<<<<< HEAD
 
 class RegistroUsuario(CreateView):
 	model = User
@@ -26,3 +27,5 @@ class RegistroUsuario(CreateView):
 	form_class = RegistroForm
 	success_url = reverse_lazy('login')	
 
+=======
+>>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
