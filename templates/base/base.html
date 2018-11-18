@@ -65,21 +65,14 @@
           <li class="menu-active"><a href="{% url 'home' %}"><i class="fas fa-home"></i>Inicio</a></li>
           
           <li><a href="#services"><i class="fas fa-file-alt"></i>Servicios</a></li>
-<<<<<<< HEAD
           <li><a href="{% url 'perfil' %}"><i class="fas fa-user-circle"></i>Perfil</a></li>
-=======
->>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
+
           <li class="menu-has-children"><a href=""><i class="fas fa-binoculars"></i> Buscar Empleados</a>
             <ul>
               <li><a href="{% url 'buscar-empleado' %}">Profesionales</a></li>
               <li><a href="{% url 'buscar-empleado' %}">Oficios</a></li>
             </ul>
           </li>
-<<<<<<< HEAD
-          
-=======
-          <li><a href="#portfolio"><i class="fas fa-user-circle"></i>Perfil</a></li>
->>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
           <li><a href="#team"><i class="fas fa-newspaper"></i>Publicaciones</a></li>
           <li class="menu-has-children"><a href="{% url 'categorias' %}"><i class="fas fa-filter"></i>Categorias</a>
             <ul>
@@ -89,12 +82,9 @@
               <li><a href="#">Oficios</a></li>
             </ul>
           </li>
-<<<<<<< HEAD
+
           <li><a href="#about"><i class="fas fa-users"></i>Acerca de Nosotros</a></li>
           <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a></li>
-=======
-          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
->>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
         </ul>
         {% endblock %}
       </nav><!-- #nav-menu-container -->
@@ -298,18 +288,12 @@
           </div>
 
           <div class="col-lg-4 col-md-6 ">
-<<<<<<< HEAD
+
             <h4>¿Quieres Resivir Notificaciones?</h4>
             <p class="text-justify">Ingresa tu correo electronico en el siguiente campo y resive nuestras ultimas actualizaciones de empresas o personas que se unan a nuestra plataforma</p>
             <form action="" method="post" class="form-inline">
               {% csrf_token %}
               <input class="form-control" type="email" name="email"><input class="btn btn-primary" type="submit"  value="Suscribirse">
-=======
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
->>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
             </form>
           </div>
 

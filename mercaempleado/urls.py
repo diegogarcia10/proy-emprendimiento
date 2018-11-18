@@ -20,10 +20,6 @@ from django.contrib.auth.views import login, logout_then_login
 from .views import home, index
 from mercaempleado.views import *
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,9 +32,6 @@ urlpatterns = [
     url(r'^buscar/',busqueda, name='buscar-empleado'),
 
     url(r'^categorias/$',categorias,name="categorias"),
-<<<<<<< HEAD
 
     url(r'^registrarse/$',RegistroUsuario.as_view(),name="registrarse"),
-=======
->>>>>>> f7d57aabe6b5429fdcf4eaf2dfd47f757490ff4b
 ]
