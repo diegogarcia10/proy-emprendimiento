@@ -23,7 +23,7 @@ from mercaempleado.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^index/', index, name='index'),
+    url(r'^$', index, name='index'),
     url(r'^home/', home, name='home'),
     url(r'^empleado/',include('apps.empleos.urls')),
     url(r'^accounts/login/', login, {'template_name':'autentificacion/login.html'}, name='login'),
