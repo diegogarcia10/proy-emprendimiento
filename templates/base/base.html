@@ -62,8 +62,8 @@
       <nav id="nav-menu-container">
         {% block navbar %}
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro"><i class="fas fa-home"></i>Home</a></li>
-          <li><a href="#about"><i class="fas fa-users"></i>About us</a></li>
+          <li class="menu-active"><a href="{% url 'home' %}"><i class="fas fa-home"></i>Inicio</a></li>
+          
           <li><a href="#services"><i class="fas fa-file-alt"></i>Servicios</a></li>
           <li><a href="{% url 'perfil' %}"><i class="fas fa-user-circle"></i>Perfil</a></li>
           <li class="menu-has-children"><a href=""><i class="fas fa-binoculars"></i> Buscar Empleados</a>
@@ -72,7 +72,7 @@
               <li><a href="{% url 'buscar-empleado' %}">Oficios</a></li>
             </ul>
           </li>
-          <li><a href="#portfolio"><i class="fas fa-user-circle"></i>Perfil</a></li>
+          
           <li><a href="#team"><i class="fas fa-newspaper"></i>Publicaciones</a></li>
           <li class="menu-has-children"><a href="{% url 'categorias' %}"><i class="fas fa-filter"></i>Categorias</a>
             <ul>
@@ -82,7 +82,8 @@
               <li><a href="#">Oficios</a></li>
             </ul>
           </li>
-          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+          <li><a href="#about"><i class="fas fa-users"></i>Acerca de Nosotros</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a></li>
         </ul>
         {% endblock %}
       </nav><!-- #nav-menu-container -->
@@ -157,7 +158,7 @@
                 <h2>Magnam aliquam quaerat</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="#featured-services" class="btn-get-started scrollto">Registrarse</a>
+                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -260,7 +261,7 @@
 
           <div class="col-lg-4 col-md-6 ">
             <h3>Mercaempleados</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <p class="text-justify">Somos una plataforma en la cual empresas y personas que buscan trabajo pueden ingresar aqui para ver ofertas de trabajo ya sean temporales o permanentes; tambien puedes ofrecer tus servicios.</p>
           </div>
 
           
@@ -271,7 +272,7 @@
               Universidad de El Salvador <br>
               San Salvador,<br>
               El Salvador <br>
-              <strong>Telefono:</strong>2237 2154<br>
+              <strong>Telefono:</strong> 2237 2154<br>
               <strong>Email:</strong> mercaempleados@gmail.com<br>
             </p>
 
@@ -286,10 +287,11 @@
           </div>
 
           <div class="col-lg-4 col-md-6 ">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            <h4>¿Quieres Resivir Notificaciones?</h4>
+            <p class="text-justify">Ingresa tu correo electronico en el siguiente campo y resive nuestras ultimas actualizaciones de empresas o personas que se unan a nuestra plataforma</p>
+            <form action="" method="post" class="form-inline">
+              {% csrf_token %}
+              <input class="form-control" type="email" name="email"><input class="btn btn-primary" type="submit"  value="Suscribirse">
             </form>
           </div>
 
