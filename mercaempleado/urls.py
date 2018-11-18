@@ -21,10 +21,9 @@ from .views import home, index
 from mercaempleado.views import *
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^index/', index, name='index'),
+    url(r'^$', index, name='index'),
     url(r'^home/', home, name='home'),
     url(r'^empleado/',include('apps.empleos.urls')),
     url(r'^accounts/login/', login, {'template_name':'autentificacion/login.html'}, name='login'),
@@ -33,4 +32,6 @@ urlpatterns = [
     url(r'^buscar/',busqueda, name='buscar-empleado'),
 
     url(r'^categorias/$',categorias,name="categorias"),
+
+    url(r'^registrarse/$',RegistroUsuario.as_view(),name="registrarse"),
 ]

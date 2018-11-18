@@ -350,3 +350,14 @@ function limpiar(){
 
   }
 }
+
+function limpiarRegistroForm(){
+  var opcion = confirm("¿Desea limpiar el formulario?");
+  if (opcion) {
+    document.getElementById("registroForm").reset();
+    document.getElementById("first_name").focus();
+    $('html, body').animate({scrollTop:0}, 'slow');
+  }else{
+
+  }
+}
