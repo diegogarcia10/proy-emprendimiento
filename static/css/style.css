@@ -242,17 +242,7 @@ h6 {
   margin-top: 50px;
 }
 
-.login {
-  height: 400px;
- /* position: absolute;*/
- /*top: 50%;*/
-  /*left: 50%;*/
- /* margin: -184px 0px 0px -155px;*/
-  background: #cacfd2 ;
- /* padding: 20px 30px;
-  border-radius: 5px;
-  box-shadow: /*0px 1px 0px*/ rgba(0,0,0,0.3),inset /*0px 1px 0px */ rgba(255,255,255,0.07)*/
-}
+
 
 #intro .carousel-background img {
   max-width: 100%;
@@ -2049,7 +2039,6 @@ h6 {
  /*top: 50%;*/
   /*left: 50%;*/
  /* margin: -184px 0px 0px -155px;*/
-  background: #cacfd2 ;
  /* padding: 20px 30px;
   border-radius: 5px;
   box-shadow: /*0px 1px 0px*/ rgba(0,0,0,0.3),inset /*0px 1px 0px */ rgba(255,255,255,0.07)*/
@@ -3565,4 +3554,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-bottom-color: #337ab7;
 }
 
-
+.registro{
+  color:  #1b2631 ;
+  font-size: 1.2em;
+}

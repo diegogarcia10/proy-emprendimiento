@@ -1,7 +1,16 @@
 {% extends 'base/base.html' %}
 
-{% block title %}Inicio de sesion{% endblock %}
+{% block title %}Resgistrate{% endblock %}
+{% block estilo %}
+  <style type="text/css">
+body {
 
+  background: url(../../static/img/bg_r.jpg) no-repeat center top;
+
+}
+
+  </style>
+{% endblock %}
 {% block navbar %}
 {% endblock %}
 
@@ -12,62 +21,62 @@
 {% endblock %}
 {% block content %}
 <br>
- <form method="POST" id="registroForm">
+ <form method="POST" id="registroForm" style="text-align: left; padding-left: 350px;">
        {% csrf_token %}
        <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <label>Nombre</label>
-            <input class="form-control" type="text" name="first_name" id="first_name">
+            <label class="registro">Nombre</label>
+            <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Ingrese su nombre" readonly>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <label >Apellidos</label>
-            <input class="form-control" type="text" name="last_name">
+            <label class="registro">Apellidos</label>
+            <input class="form-control" type="text" name="last_name" placeholder="ingrese sus apellidos" readonly>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <label >Nombre de usuario</label>
-            <input class="form-control" type="text" name="username">
+            <label class="registro">Nombre de usuario</label>
+            <input class="form-control" type="text" name="username" placeholder="Ingrese su username" readonly>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <label >Correo</label>
-            <input class="form-control" type="text" name="email">
+            <label class="registro">Correo</label>
+            <input class="form-control" type="text" name="email" placeholder="Ingrese su email" readonly>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <label >Contraseña</label>
-            <input class="form-control" type="password" name="password1">
+            <label class="registro">Contraseña</label>
+            <input class="form-control" type="password" name="password1" placeholder="Ingrese password" readonly>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <label >Confirmar contraseña</label>
-            <input class="form-control" type="password" name="password2">
+            <label class="registro">Confirmar contraseña</label>
+            <input class="form-control" type="password" name="password2" placeholder="Confirme password" readonly>
           </div>
         </div>
       </div>
       
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5 col-md-offset-2">
           <div class="form-group">
-            <button class="btn btn-primary "type="submit">Guardar</button>
-            <input type="button" onclick="limpiarRegistroForm();" class="btn btn-danger" value="Cancelar">
+            <button  class="btn btn-outline-success btn-lg" type="submit">Guardar</button>
+            &nbsp;&nbsp;<input type="button" onclick="limpiarRegistroForm();" class="btn btn-outline-danger btn-lg" value="Cancelar">
           </div>
         </div>
     </div>
