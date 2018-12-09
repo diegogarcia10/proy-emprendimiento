@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'mercaempleado.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'Emprendimiento',
-    'USER':'postgres',
-    'PASSWORD':'administrador',    
-	'HOST':'localhost',
+    'NAME': 'd3gj8808me25bi',
+    'USER':'irhgnahzbwsluo',
+    'PASSWORD':'cd3c971c0c5242666df9a4909e3d966d33b735ccc138d2287faf4aa0224b2aa3',    
+	'HOST':'ec2-204-236-230-19.compute-1.amazonaws.com',
 	'PORT':5432,
     }
 }
