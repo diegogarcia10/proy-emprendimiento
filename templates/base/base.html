@@ -29,6 +29,8 @@
   <meta property="og:image" content="http://mercaempleado.herokuapp.com/static/img/intro-carousel/1.jpg"/>
   <meta property="og:site_name" content="MercaEmpleado"/>
   <meta property="og:locale" content="El Salvador"/>
+  <meta property="fb:admins" content="2374719745891252" />
+  <meta property="fb:app_id"    content="800298976976700"/>
 
 
 
@@ -87,7 +89,7 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
-
+      {% if user.is_authenticated %}
       <nav id="nav-menu-container">
         {% block navbar %}
         <ul class="nav-menu">
@@ -125,7 +127,9 @@
           <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a></li>
         </ul>
         {% endblock %}
-      </nav><!-- #nav-menu-container -->
+      </nav>
+      {% endif %}
+      <!-- #nav-menu-container -->
     </div>
     {% endblock %}
   </header><!-- #header -->

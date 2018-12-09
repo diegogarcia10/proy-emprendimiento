@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+ 
 import os
 from django.urls import reverse_lazy
 
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'mercaempleado.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'emprendimiento.sqlite3'),
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'Emprendimiento',
+    'USER':'postgres',
+    'PASSWORD':'administrador',    
+	'HOST':'localhost',
+	'PORT':5432,
     }
 }
 
