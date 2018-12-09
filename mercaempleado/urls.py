@@ -28,9 +28,6 @@ urlpatterns = [
     url(r'^empleado/',include('apps.empleos.urls')),
     url(r'^accounts/login/', login, {'template_name':'autentificacion/login.html'}, name='login'),
     url(r'^logout/',logout_then_login, name='logout'),
-
-    url(r'^buscar/',busqueda, name='buscar-empleado'),
-
     url(r'^categorias/$',categorias,name="categorias"),
 
     url(r'^registrarse/$',RegistroUsuario.as_view(),name="registrarse"),

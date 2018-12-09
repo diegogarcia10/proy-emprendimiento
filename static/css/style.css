@@ -33,7 +33,26 @@ input[type="radio"] {
 label {
   color: #1f618d;
 }
+/*scroll personalizado*/
+.contenedor {
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  overflow: auto;
+  font-family: 'Open Sans';
+  border-radius: 4px;
+}
+.contenedor::-webkit-scrollbar {
+  width: 7px;
+}
 
+.contenedor::-webkit-scrollbar-thumb {
+  background: #ff9d00;
+  border-radius: 10px;
+}
+/*fin scroll*/
 
 a:hover,
 a:active,

@@ -10,7 +10,7 @@ class Empleado(models.Model):
 	email = models.CharField(max_length = 25, null = True)
 	telefono = models.CharField(max_length = 9, null = True)
 	direccion = models.CharField(max_length = 80, null = True)
- 
+	descripcion=models.CharField(max_length=150,null=True)
 class Curriculum(models.Model):
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)
 	objetivo = models.CharField(max_length = 150, null = True)
