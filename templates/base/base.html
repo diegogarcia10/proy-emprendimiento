@@ -5,16 +5,32 @@
   {% load static %}
   {% block head %}
   <meta charset="utf-8">
-  <title>{% block title %}Mercaempleado portal{% endblock %}</title>
+  <title>{% block title %}Mercaempleado{% endblock %}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="#" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+  <!--Para Google-->
+  <meta name="google-site-verification" content="03DIQ4UpHjnQ_8H8HtZ-bVhYEYKUUMCfdUJZ8CKZMec" />
+  <meta name="autor" content="Estudiantes de la Universidad de El Salvador" />
+  <meta name="keywords" content="empleo,mercado,trabajo,curriculum,profesionales,oficios,servicios"/>
+  <meta name="description" content="Mercaempleado, somos una plataforma web que impulsa la obtencion facil de un empleo permanete o temporal,atravez de publicaciones de ofertas de trabajo de la empresa o simplemente una persona necesitando un servicio personal" />
+  <meta property="og:title" content="MercaEmpleado"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://mercaempleado.herokuapp.com/" />
+  <meta property="og:description" content="Mercaempleado, somos una plataforma web que impulsa la obtencion facil de un empleo permanete o temporal,atravez de publicaciones de ofertas de trabajo de la empresa o simplemente una persona necesitando un servicio personal"/>
+  <meta property="og:image" content="http://mercaempleado.herokuapp.com/static/img/intro-carousel/1.jpg"/>
+  <meta property="og:site_name" content="MercaEmpleado"/>
+  <meta property="og:locale" content="El Salvador"/>
+  <!-- Favicons -->  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129408691-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-129408691-1');
+  </script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
@@ -34,6 +50,7 @@
 
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 {% block estilo %}
+
 {% endblock %}
   <!-- =======================================================
     Theme Name: BizPage
@@ -54,7 +71,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">Mercaempleados</a></h1>
+        <h1><a href="{% url 'home' %}" class="scrollto">Mercaempleado</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -62,18 +79,27 @@
       <nav id="nav-menu-container">
         {% block navbar %}
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro"><i class="fas fa-home"></i>Home</a></li>
-          <li><a href="#about"><i class="fas fa-users"></i>About us</a></li>
+          <li class="menu-active"><a href="{% url 'home' %}"><i class="fas fa-home"></i>Inicio</a></li>
+          
           <li><a href="#services"><i class="fas fa-file-alt"></i>Servicios</a></li>
           <li><a href="{% url 'perfil' %}"><i class="fas fa-user-circle"></i>Perfil</a></li>
+
           <li class="menu-has-children"><a href=""><i class="fas fa-binoculars"></i> Buscar Empleados</a>
             <ul>
               <li><a href="{% url 'buscar-empleado' %}">Profesionales</a></li>
               <li><a href="{% url 'buscar-empleado' %}">Oficios</a></li>
             </ul>
           </li>
-          <li><a href="#portfolio"><i class="fas fa-user-circle"></i>Perfil</a></li>
-          <li><a href="#team"><i class="fas fa-newspaper"></i>Publicaciones</a></li>
+
+         
+          <li><a href="#team"><i class="fas fa-newspaper"></i>Publicaciones</a>
+            <ul>
+              <li><a href="{% url 'crearPublicacion' %}">Crear Publicacion</a></li>
+            </ul>
+          </li>
+
+          
+
           <li class="menu-has-children"><a href="{% url 'categorias' %}"><i class="fas fa-filter"></i>Categorias</a>
             <ul>
               <li><a href="{% url 'categorias' %}">Economia</a></li>
@@ -82,7 +108,9 @@
               <li><a href="#">Oficios</a></li>
             </ul>
           </li>
-          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+
+          <li><a href="#about"><i class="fas fa-users"></i>Acerca de Nosotros</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a></li>
         </ul>
         {% endblock %}
       </nav><!-- #nav-menu-container -->
@@ -106,10 +134,10 @@
             <div class="carousel-background"><img src="{% static 'img/intro-carousel/1.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>We are professional</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2>Somos profesionales</h2>
+                <p>La Plataforma Web mas interactiva del mundo ofreciendo servicios creados por la misma comunidad perteneciente al sitio, permitiendo la comunicacion, Contratacion y busqueda de empleo formal u informal.</p>
                 <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="#featured-services" class="btn-get-started scrollto">Registrarse</a>
+                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -118,10 +146,10 @@
             <div class="carousel-background"><img src="{% static 'img/intro-carousel/2.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>At vero eos et accusamus</h2>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+                <h2>Una Red de Empleos</h2>
+                <p>Una comunidad comprometida con el amplio desarrollo del empleo donde encontraras empresas que deseen contratar personas con cualidades especificas, o tambien encontraras personas que contraten a otras personas con habilidades de cualquier tipo para que hagan una deterrminada actividad</p>
                 <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="#featured-services" class="btn-get-started scrollto">Registrarse</a>
+                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -130,10 +158,10 @@
             <div class="carousel-background"><img src="{% static 'img/intro-carousel/3.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Temporibus autem quibusdam</h2>
-                <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
+                <h2>Tus Habilidades Como Persona</h2>
+                <p>Es uno de nuestros pilares y lo que mas nos importa de ti que puedas dar a conocer tus conocimientos en determinadas actividades con el fin de que te contraten.</p>
                	<a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="#featured-services" class="btn-get-started scrollto">Registrarse</a>
+                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -142,10 +170,10 @@
             <div class="carousel-background"><img src="{% static 'img/intro-carousel/4.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Nam libero tempore</h2>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
+                <h2>Tus Propositos como Empresa</h2>
+                <p>Aqui encontraras un amplio numero de personas con ganas de trabajar con habilidades y cualidades a la medida de lo que tu buscas.</p>
                 <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="#featured-services" class="btn-get-started scrollto">Registrarse</a>
+                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -154,10 +182,10 @@
             <div class="carousel-background"><img src="{% static 'img/intro-carousel/5.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Magnam aliquam quaerat</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2>Publicaciones</h2>
+                <p>Podras ver tu como usuario de esta plataforma las diferentes ofertas laborales que hacen las diferentes empresas en las cuales puedes ya sea examinarte con un test hecho por la empresa o simplemente ponerte en contacto con la misma</p>
                 <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="#featured-services" class="btn-get-started scrollto">Registrarse</a>
+                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -180,74 +208,8 @@
   {% endblock %}
 
 {% block content %}
-  <main id="main">
-    <section id="contact" class="section-bg wow fadeInUp">
-      
-      <div class="container">
-
-        <div class="section-header">
-          <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-
-        <div class="row contact-info">
-
-          <div class="col-md-4">
-            <div class="contact-address">
-              <i class="ion-ios-location-outline"></i>
-              <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-email">
-              <i class="ion-ios-email-outline"></i>
-              <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-              <div class="validation"></div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
-      </div>
-    </section><!-- #contact -->
-  </main>
-  {% endblock %}
+  
+{% endblock %}
 
   <!--==========================
     Footer
@@ -259,8 +221,8 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6 ">
-            <h3>Mercaempleados</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>Mercaempleado</h3>
+            <p class="text-justify">Somos una plataforma en la cual empresas y personas que buscan trabajo pueden ingresar aqui para ver ofertas de trabajo ya sean temporales o permanentes; tambien puedes ofrecer tus servicios.</p>
           </div>
 
           
@@ -271,8 +233,8 @@
               Universidad de El Salvador <br>
               San Salvador,<br>
               El Salvador <br>
-              <strong>Telefono:</strong>2237 2154<br>
-              <strong>Email:</strong> mercaempleados@gmail.com<br>
+              <strong>Telefono:</strong> 2237 2154<br>
+              <strong>Email:</strong> mercaempleado@gmail.com<br>
             </p>
 
             <div class="social-links">
@@ -286,10 +248,12 @@
           </div>
 
           <div class="col-lg-4 col-md-6 ">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
+
+            <h4>¿Quieres Resivir Notificaciones?</h4>
+            <p class="text-justify">Ingresa tu correo electronico en el siguiente campo y resive nuestras ultimas actualizaciones de empresas o personas que se unan a nuestra plataforma</p>
+            <form action="" method="post" class="form-inline">
+              {% csrf_token %}
+              <input class="form-control" type="email" name="email"><input class="btn btn-primary" type="submit"  value="Suscribirse">
             </form>
           </div>
 

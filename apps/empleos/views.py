@@ -10,3 +10,6 @@ class vistaPerfil(TemplateView):
 def generarCurriculum(request):
 	return render(request, 'perfil/generarCurriculum.html')
 
+class crearPublicacion(TemplateView):
+	template_name="publicacion/crearPublicacion.html"
+

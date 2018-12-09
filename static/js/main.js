@@ -260,6 +260,9 @@ function agregarExp(){
   divContExp.appendChild(divGroupInicio);
   divContExp.appendChild(divGroupFinal);
   divCont.appendChild(divContExp);
+  $('html,body').animate({
+    	scrollTop: $("#experiencia").offset().top
+	}, 1000);
 }
 
 function agregarEducacion(){
@@ -304,6 +307,9 @@ function agregarEducacion(){
   divContExp.appendChild(divGroupGrado);
   divContExp.appendChild(divGroupEsp);
   divCont.appendChild(divContExp);
+  $('html,body').animate({
+    	scrollTop: $("#educacion").offset().top
+	}, 1000);
 }
 
 function agregarHabilidad(){
@@ -327,6 +333,10 @@ function agregarHabilidad(){
   divRow.appendChild(divGroup);
   divContExp.appendChild(divRow); 
   divCont.appendChild(divContExp);
+  $('html,body').animate({
+    	scrollTop: $("#habilidades").offset().top
+	}, 1000);
+
 }
 
 function limpiar(){
@@ -335,6 +345,18 @@ function limpiar(){
   if (opcion) {
     document.getElementById("formCV").reset();
     document.getElementById("txtNombre").focus();
+    $('html, body').animate({scrollTop:0}, 'slow');
+  }else{
+
+  }
+}
+
+function limpiarRegistroForm(){
+  var opcion = confirm("¿Desea limpiar el formulario?");
+  if (opcion) {
+    document.getElementById("registroForm").reset();
+    document.getElementById("first_name").focus();
+    $('html, body').animate({scrollTop:0}, 'slow');
   }else{
 
   }
