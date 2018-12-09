@@ -19,3 +19,7 @@ def busqueda(request):
 	categoria=Categoria.objects.all()
 	contexto={'empleados':emple,'categorias':categoria}
 	return render(request,'busquedaTrabajador/busqtrabajador.html',contexto)
+
+class vistaAcercaDeNosotros(TemplateView):
+	template_name="AcercaDeNosotros/AcercaDeNosotros.html"
+		
