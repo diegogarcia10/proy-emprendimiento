@@ -96,13 +96,15 @@
           <li class="menu-active"><a href="{% url 'home' %}"><i class="fas fa-home"></i>Inicio</a></li>
           <!--
           <li><a href="#services"><i class="fas fa-file-alt"></i>Servicios</a></li>-->
+          {% if not user.is_superuser %}
           <li><a href="{% url 'perfil' %}"><i class="fas fa-user-circle"></i>Perfil</a></li>
-
+          {% endif %}
+          {% if user.is_superuser %}
           <li class="menu-has-children"><a href="{% url 'buscar-empleado' %}"><i class="fas fa-binoculars"></i> Buscar Empleados</a>
           </li>
-
+          {% endif %}
          
-
+          {% if  user.is_superuser %}
           <li><a href="#team"><i class="fas fa-newspaper"></i>Publicaciones</a>
             <ul>
               <li><a href="{% url 'crearPublicacion' %}">Crear Publicacion</a></li>
@@ -110,8 +112,9 @@
 
             </ul>
           </li>
+          {% endif %}
           
-
+  
           <li class="menu-has-children"><a href="{% url 'categoria' %}"><i class="fas fa-filter"></i>Categorias</a>
             
           </li>
