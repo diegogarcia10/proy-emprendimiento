@@ -22,4 +22,15 @@ def busqueda(request):
 
 class vistaAcercaDeNosotros(TemplateView):
 	template_name="AcercaDeNosotros/AcercaDeNosotros.html"
+
+def categorias(request, cat='1'):
+	categoria = Categoria.objects.all()
+	existe = Publicacion.objects.filter(categoria_id = cat).exists()
+	if existe:
+		pub= Publicacion.objects.filter(categoria_id = cat)
+	else:
+		pub = ''
+
+	contexto={'categorias':categoria,'pub':pub}
+	return	render(request, 'categorias/categorias.html',contexto)
 		

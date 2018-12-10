@@ -10,4 +10,10 @@ urlpatterns = [
 	url(r'crearPublicacion', crearPublicacion.as_view(), name= 'crearPublicacion'),
     url(r'^buscar/',busqueda, name='buscar-empleado'),
     url(r'^acercade',vistaAcercaDeNosotros.as_view(),name="acercadenosotros"),
+    
+
+    
+    path('',categorias, name= "categoria"),  
+    url(r'^(?P<cat>\d+)/$',categorias,name="categoria1"),
+    
 ]
