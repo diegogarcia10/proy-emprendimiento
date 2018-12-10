@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% block title %}Buscar Empleado{% endblock %}
+{% block intro %}
+<section id="intro" style="height: 100px;">
+</section>
+{% endblock %}
+{% block content %} 
+<hr>
+<div class="col-8">
+<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+        <thead>
+            <tr>
+                <th>Titulo Publicacion</th>
+                <th>Categoria</th>
+                <th>Agregar Prueba</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            {% if lp %}
+            {% for sim in lp %}
+            <tr>
+                <td>{{sim.titulo_publicacion}}</td>
+                <td>{{sim.categoria}}</td>
+                <td>
+                        <a class="btn btn-danger" href="{% url 'prueba' %}">Agregar</a>                   
+                </td>
+            </tr>
+            {%endfor%}
+            {% else %}
+            <h2>La lista de Publicaciones se encuentra vacía</h2>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

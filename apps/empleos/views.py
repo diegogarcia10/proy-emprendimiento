@@ -33,3 +33,12 @@ def busquedaAjaxView(request):
 class vistaAcercaDeNosotros(TemplateView):
 	template_name="AcercaDeNosotros/AcercaDeNosotros.html"
 		
+
+def ListaPublicaciones(request):
+	lista=Publicacion.objects.all()
+	contexto={'lp':lista}
+	return render(request,'publicacion/lista-p.html',contexto)
+
+def Prueba(request):
+
+	return render(request,'publicacion/prueba.html')
