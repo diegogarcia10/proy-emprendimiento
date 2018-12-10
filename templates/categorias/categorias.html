@@ -39,7 +39,7 @@
                         <div class="list-group">
                             
                             {% for c in categorias %}
-                                <a href="{% url 'categoria1' {{c.id}}%}" class="list-group-item" id="{{c.id}}">
+                                <a href="{% url 'categoria1' c.id %}" class="list-group-item" id="{{c.id}}">
                                     <i class="fas fa-briefcase"></i> {{c.nombre_categoria}}   
                                 </a>
                             {% endfor %}                               
@@ -51,21 +51,44 @@
 		</section>
 		<section class="col-md-8">
 			<div class= "container">
-				<div class="panel panel-default">
-                        {% for c in publicacion %}
-                            <p> c.titulo_publicacion</p>                     
+				
+                        {% for c in pub %}
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fab fa-android"></i> Ofertas de empleo disponibles 
+                        </div>                        
+                        <div class="panel-body">
+                            <ul class="timeline">
+                                <li>
+                                    
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">{{c.titulo_publicacion}}</h4>                                           
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>requerimientos: {{c.requerimientos}}</p>
+                                            <p>horarios: {{c.horarios_empleo}}</p>
+                                        </div>
+                                        <button type="button" class="btn btn-success">Aplicar</button>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        </div>
+
                         {% endfor %}
                         
 
                         <!-- /.panel-body -->
+                    
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                                                
+                        <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-                    
-                        
-                        <!-- /.panel-body -->
-                    
-                    <!-- /.panel -->
-
+                </div>
 
 			</div>		
 		</section>
