@@ -53,8 +53,7 @@
 				<div class="contenedor" id="Layer1" style="width:100%; height:500px; overflow: scroll;">
 					
 					{% for e in empleados %}
-					<div id='buss'>
-
+					<div id='buss'><!--Aqui se imprimiran los resultados del ajax-->
 					</div>
 				
 					{% endfor %}                          
@@ -73,8 +72,8 @@
 </div>
 	</div>
 </div>
-
 {% endblock %}
+
 {% block extrajs %}
 <script>
 		$('.list-group-item').on('click',hizeClick);
