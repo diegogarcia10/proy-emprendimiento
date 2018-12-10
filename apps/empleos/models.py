@@ -58,7 +58,11 @@ class Empleador(models.Model):
 	direccion = models.CharField(max_length = 150)
 	telefono = models.CharField(max_length = 9)
 	email = models.CharField(max_length = 50)
-
+	def __str__(self): 
+    		return self.nombre_comercial
+	class Meta:
+        	ordering = ['nombre_comercial']
+        	
 class Contrato(models.Model):
 	empleador = models.ForeignKey(Empleador, on_delete = models.CASCADE)
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)

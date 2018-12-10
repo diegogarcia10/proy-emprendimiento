@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.urls import path
 from django.contrib.auth.views import login, logout_then_login
-from .views import home, index, PerfilBuscadoCreate
+from .views import home, index, PerfilBuscadoCreate, crearPublicacion
 from mercaempleado.views import *
 
 
@@ -32,4 +32,5 @@ urlpatterns = [
 
     url(r'^registrarse/$',RegistroUsuario.as_view(),name="registrarse"),
     url(r'crearPerfil', PerfilBuscadoCreate.as_view(), name= 'crearPerfil'),
+    url(r'crearPublicacion', crearPublicacion, name= 'crearPublicacion'),
 ]
