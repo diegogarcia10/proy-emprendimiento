@@ -94,14 +94,14 @@ def busqueda(request):
 def busquedaAjaxView(request):
 	emples=Empleado.objects.filter(categoria=request.GET['id'])
 	data=serializers.serialize('json',emples,
-		fields=('nombre_empleado','apellidos_empleado','descripcion','telefono'))
+		fields=('nombre_empleado','apellidos_empleado','descripcion','telefono','foto'))
 	return HttpResponse(data,content_type='application/json')
 
 
 class vistaAcercaDeNosotros(TemplateView):
 	template_name="AcercaDeNosotros/AcercaDeNosotros.html"
 
-		
+
 
 def ListaPublicaciones(request):
 	lista=Publicacion.objects.all()
@@ -123,5 +123,6 @@ def categorias(request, cat='1'):
 
 	contexto={'categorias':categoria,'pub':pub}
 	return	render(request, 'categorias/categorias.html',contexto)
+
 		
 

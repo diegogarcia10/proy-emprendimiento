@@ -22,5 +22,3 @@ urlpatterns = [
 
 	url(r'^lista/$', ListaPublicaciones,name='lista'),	
 	url(r'^prueba/$', Prueba,name='prueba'),	
-
-]
