@@ -98,11 +98,7 @@
           <li><a href="#services"><i class="fas fa-file-alt"></i>Servicios</a></li>
           <li><a href="{% url 'perfil' %}"><i class="fas fa-user-circle"></i>Perfil</a></li>
 
-          <li class="menu-has-children"><a href="#"><i class="fas fa-binoculars"></i> Buscar Empleados</a>
-            <ul>
-              <li><a href="{% url 'buscar-empleado' %}">Profesionales</a></li>
-              <li><a href="{% url 'buscar-empleado' %}">Oficios</a></li>
-            </ul>
+          <li class="menu-has-children"><a href="{% url 'buscar-empleado' %}"><i class="fas fa-binoculars"></i> Buscar Empleados</a>
           </li>
 
          
@@ -289,7 +285,7 @@
   <div id="preloader"></div>
 
   <!-- JavaScript Libraries -->
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js?fbclid=IwAR0U2OaqQbSAHn1PnCngHiHkxp_K6_9iWLlAq54-CChGppvVgHR9brFYpOg"></script>
   <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
   <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
