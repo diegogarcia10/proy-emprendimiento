@@ -19,10 +19,8 @@ urlpatterns = [
     
 
 	url(r'^busq/$', busquedaAjaxView,name='busq'),
-<<<<<<< HEAD
+
 	url(r'^lista/$', ListaPublicaciones,name='lista'),	
 	url(r'^prueba/$', Prueba,name='prueba'),	
-=======
 
->>>>>>> 1fe26d00d937eafe74d22a3b81d67f023da5281e
 ]
