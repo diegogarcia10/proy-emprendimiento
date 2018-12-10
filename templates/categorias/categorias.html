@@ -34,60 +34,28 @@
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
-                            </div>       
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <i class="fab fa-android"></i> Ingenieria
-                                    
+                            </div>   
+                            
+                        <div class="list-group">
+                            
+                            {% for c in categorias %}
+                                <a href="{% url 'categoria1' c.id %}" class="list-group-item" id="{{c.id}}">
+                                    <i class="fas fa-briefcase"></i> {{c.nombre_categoria}}   
                                 </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-camera-retro fa-lg"></i> Hosteleria y turismo
-                                    
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fas fa-briefcase"></i> Oficios varios
-                                    
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="far fa-building"></i> Construccion
-                                    
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fas fa-air-freshener"></i> Carpinteria
-                                    
-                                </a>
-                                
-                                <a href="#" class="list-group-item">
-                                    <i class="fas fa-apple-alt"></i> Servicios y Cocina
-                                    
-                                </a>
-
-                                <a href="#" class="list-group-item">
-                                    <i class="fas fa-pencil-alt"></i></i> Administrativo
-                                    
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fas fa-phone-square"></i> Call-Center
-                                    
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-money fa-fw"></i> Licenciaturas
-                                    
-                                </a>
+                            {% endfor %}                               
                             </div>
-                            
-                            
                         </div>
                         
-                
 					
 			</div>		
 		</section>
 		<section class="col-md-8">
 			<div class= "container">
-				<div class="panel panel-default">
+				
+                        {% for c in pub %}
+                        <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fab fa-android"></i></i> Optima Consultores S.A de C.V
+                            <i class="fab fa-android"></i> Ofertas de empleo disponibles 
                         </div>                        
                         <div class="panel-body">
                             <ul class="timeline">
@@ -95,17 +63,11 @@
                                     
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Consultorias y gestión de servicios informáticos </h4>                                          
+                                            <h4 class="timeline-title">{{c.titulo_publicacion}}</h4>                                           
                                         </div>
                                         <div class="timeline-body">
-                                        	<div class = "row">
-                                        		<div class="col-md-2" style = "">
-                                        			
-                                        		</div>
-                                        	</div>
-                                        </div>
-                                        <div class= "col">
-                                        	
+                                            <p>requerimientos: {{c.requerimientos}}</p>
+                                            <p>horarios: {{c.horarios_empleo}}</p>
                                         </div>
                                         <button type="button" class="btn btn-success">Aplicar</button>
                                     </div>
@@ -113,34 +75,16 @@
                                 
                             </ul>
                         </div>
+                        </div>
 
+                        {% endfor %}
+                        
 
                         <!-- /.panel-body -->
-                    </div>
+                    
                     <!-- /.panel -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fab fa-android"></i> Ingeniero Industrial
-                        </div>                        
-                        <div class="panel-body">
-                            <ul class="timeline">
-                                <li>
-                                    
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Gerencia administrativa</h4>                                           
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p></p>
-                                        </div>
-                                        <button type="button" class="btn btn-success">Aplicar</button>
-                                    </div>
-                                </li>
-                                
-                            </ul>
-                        </div>
-
-                        
+                                                
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
