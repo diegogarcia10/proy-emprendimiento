@@ -22,4 +22,8 @@ urlpatterns = [
 
 	url(r'^lista/$', ListaPublicaciones,name='lista'),	
 	url(r'^prueba/$', Prueba,name='prueba'),	
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e5998f99f519a59f7ee494277c61ac2f2af45b7
 ]

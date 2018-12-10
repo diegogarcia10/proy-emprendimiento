@@ -101,6 +101,10 @@ def busquedaAjaxView(request):
 class vistaAcercaDeNosotros(TemplateView):
 	template_name="AcercaDeNosotros/AcercaDeNosotros.html"
 
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 6e5998f99f519a59f7ee494277c61ac2f2af45b7
 
 def ListaPublicaciones(request):
 	lista=Publicacion.objects.all()
@@ -110,6 +114,10 @@ def ListaPublicaciones(request):
 def Prueba(request):
 
 	return render(request,'publicacion/prueba.html')
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e5998f99f519a59f7ee494277c61ac2f2af45b7
 
 def categorias(request, cat='1'):
 	categoria = Categoria.objects.all()
@@ -121,4 +129,9 @@ def categorias(request, cat='1'):
 
 	contexto={'categorias':categoria,'pub':pub}
 	return	render(request, 'categorias/categorias.html',contexto)
+<<<<<<< HEAD
 		
+=======
+		
+
+>>>>>>> 6e5998f99f519a59f7ee494277c61ac2f2af45b7
