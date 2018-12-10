@@ -139,7 +139,7 @@
   ============================-->
   {% block intro %}
   <section id="intro">
-    <div class="intro-container">
+    <div vocab="http://schema.org/" typeof="WebSite" class="intro-container">
       <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
 
         <ol class="carousel-indicators"></ol>
@@ -147,61 +147,61 @@
         <div class="carousel-inner" role="listbox">
 
           <div class="carousel-item active">
-            <div class="carousel-background"><img src="{% static 'img/intro-carousel/1.jpg' %}" alt=""></div>
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/1.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Somos profesionales</h2>
-                <p>La Plataforma Web mas interactiva del mundo ofreciendo servicios creados por la misma comunidad perteneciente al sitio, permitiendo la comunicacion, Contratacion y busqueda de empleo formal u informal.</p>
-                <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
+                <p property="description">La Plataforma Web mas interactiva del mundo ofreciendo servicios creados por la misma comunidad perteneciente al sitio, permitiendo la comunicacion, Contratacion y busqueda de empleo formal u informal.</p>
+                <a property="url" href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
+                <a property="url" href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{% static 'img/intro-carousel/2.jpg' %}" alt=""></div>
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/2.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Una Red de Empleos</h2>
-                <p>Una comunidad comprometida con el amplio desarrollo del empleo donde encontraras empresas que deseen contratar personas con cualidades especificas, o tambien encontraras personas que contraten a otras personas con habilidades de cualquier tipo para que hagan una deterrminada actividad</p>
-                <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
+                <p property="text">Una comunidad comprometida con el amplio desarrollo del empleo donde encontraras empresas que deseen contratar personas con cualidades especificas, o tambien encontraras personas que contraten a otras personas con habilidades de cualquier tipo para que hagan una deterrminada actividad</p>
+                <a property="url" href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
+                <a property="url" href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{% static 'img/intro-carousel/3.jpg' %}" alt=""></div>
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/3.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Tus Habilidades Como Persona</h2>
-                <p>Es uno de nuestros pilares y lo que mas nos importa de ti que puedas dar a conocer tus conocimientos en determinadas actividades con el fin de que te contraten.</p>
-               	<a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
+                <p property="text">Es uno de nuestros pilares y lo que mas nos importa de ti que puedas dar a conocer tus conocimientos en determinadas actividades con el fin de que te contraten.</p>
+               	<a property="url" href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
+                <a property="url" href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{% static 'img/intro-carousel/4.jpg' %}" alt=""></div>
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/4.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Tus Propositos como Empresa</h2>
-                <p>Aqui encontraras un amplio numero de personas con ganas de trabajar con habilidades y cualidades a la medida de lo que tu buscas.</p>
-                <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
+                <p property="text">Aqui encontraras un amplio numero de personas con ganas de trabajar con habilidades y cualidades a la medida de lo que tu buscas.</p>
+                <a property="url" href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
+                <a property="url" href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{% static 'img/intro-carousel/5.jpg' %}" alt=""></div>
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/5.jpg' %}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Publicaciones</h2>
-                <p>Podras ver tu como usuario de esta plataforma las diferentes ofertas laborales que hacen las diferentes empresas en las cuales puedes ya sea examinarte con un test hecho por la empresa o simplemente ponerte en contacto con la misma</p>
-                <a href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
-                <a href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
+                <p property="text">Podras ver tu como usuario de esta plataforma las diferentes ofertas laborales que hacen las diferentes empresas en las cuales puedes ya sea examinarte con un test hecho por la empresa o simplemente ponerte en contacto con la misma</p>
+                <a property="url" href="{% url 'login' %}" class="btn-get-started scrollto">Iniciar sesion</a>
+                <a property="url" href="{% url 'registrarse' %}" class="btn-get-started scrollto">Registrarse</a>
               </div>
             </div>
           </div>
@@ -234,11 +234,11 @@
     {% block footer %}
     <div class="footer-top">
       <div class="container">
-        <div class="row">
+        <div itemscope itemtype="https://schema.org/ContactPage" class="row">
 
           <div class="col-lg-4 col-md-6 ">
             <h3>Mercaempleado</h3>
-            <p class="text-justify">Somos una plataforma en la cual empresas y personas que buscan trabajo pueden ingresar aqui para ver ofertas de trabajo ya sean temporales o permanentes; tambien puedes ofrecer tus servicios.</p>
+            <p itemprop="description" class="text-justify">Somos una plataforma en la cual empresas y personas que buscan trabajo pueden ingresar aqui para ver ofertas de trabajo ya sean temporales o permanentes; tambien puedes ofrecer tus servicios.</p>
           </div>
 
           
@@ -254,10 +254,10 @@
             </p>
 
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="https://twitter.com/mercaempleado" itemprop="url" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="www.facebook.com/Mercaempleado-2374719745891252/" itemprop="url" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/mercaempleado/?hl=es-la" itemprop="url" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#"  class="google-plus"><i class="fa fa-google-plus"></i></a>
               <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
 
