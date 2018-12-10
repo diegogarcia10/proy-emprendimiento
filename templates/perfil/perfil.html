@@ -14,6 +14,9 @@
 <button  class="btn btn-primary">
 	Agregar Preparacion
 </button>
-<input type="button" class="btn btn-secodary" name="btnGenCurriculum" onclick="location.href='{% url 'curriculum' %}'" id="btnGenCurriculum" value="Generar Curriculum">
+{% if not user.is_superuser %}
+<input type="button" class="btn btn-secodary" name="btnGenCurriculum" onclick="location.href='{% url 'curriculum' %}'" id="btnGenCurriculum" value="Crear Curriculum">
+<input type="button" class="btn btn-secodary" name="btnVerCurriculum" onclick="location.href='{% url 'verCurriculum' %}'" value="Ver Curriculum">
+{% endif %}
 <br><br>
 {% endblock %}

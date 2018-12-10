@@ -1,0 +1,132 @@
+{% extends 'base/base.html' %}
+
+
+{% block intro %}
+<section id="intro" style="height: 100px;">
+  
+</section>
+{% endblock %}
+
+{% block content %}
+<br>
+	{% if curriculum == False %}
+		<h4>¡Usted aun no ha creado su curriculum!</h4>
+		<input type="button" class="btn btn-secodary" name="btnGenCurriculum" onclick="location.href='{% url 'curriculum' %}'" id="btnGenCurriculum" value="Crear Curriculum">
+	{% else %}
+	<h1 style="text-align: center;">Curriculum Vitae</h1>
+		<span class="border border-primary">
+			{% if empleado %}
+				<h4 style="text-align: center;">Datos personales</h4>
+				<table style="margin: auto;">
+					<tr>
+						<td><label ><b>Nombre:</b></label></td>
+						<td>{{ empleado.nombre_empleado }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Apellidos:</b></label></td>
+						<td>{{ empleado.apellidos_empleado }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Fecha de nacimiento:</b></label></td>
+						<td>{{ empleado.fecha_nacimiento }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Tipo empleado:</b></label></td>
+						<td>{{ empleado.tipo_empleado }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Puntuacion:</b></label></td>
+						<td>{{ empleado.puntuacion }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Email:</b></label></td>
+						<td>{{ empleado.email }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Telefono:</b></label></td>
+						<td>{{ empleado.telefono }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Direccion:</b></label></td>
+						<td>{{ empleado.direccion }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Categoria:</b></label></td>
+						<td>{{ empleado.categoria.nombre_categoria }}</td>
+					</tr>
+					<tr>
+						<td><label ><b>Objetivo:</b></label></td>
+						<td>{{ curriculum.objetivo }}</td>
+					</tr>
+				</table><br>
+			{% endif %}
+			{% if experiencias %}
+				<h4 style="text-align: center;">Experiencias laborales</h4>
+				<table style="margin: auto;">
+					{% for experiencia in experiencias %}
+
+					<h5 style="text-align: center;">Experiencia con empresa: <b>{{ experiencia.empresa }}</b> </h5>
+						<tr>
+							<td><label ><b>Ubicacion empresa:</b></label></td>
+							<td>{{ experiencia.ubicacion_empresa }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Puesto ejercido:</b></label></td>
+							<td>{{ experiencia.puesto_ejercido }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Tareas realizadas:</b></label></td>
+							<td>{{ experiencia.tareas_realizadas }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Fecha entrada:</b></label></td>
+							<td>{{ experiencia.fecha_entrada }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Fecha salida:</b></label></td>
+							<td>{{ experiencia.fecha_salida }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Razon salida:</b></label></td>
+							<td>{{ experiencia.razon_salida }}</td>
+						</tr><br>
+					{% endfor %}
+				</table><br>
+			{% endif %}
+			{% if educaciones %}
+			<h4 style="text-align: center;">Estudios academicos</h4>
+				<table style="margin: auto;">
+					{% for educacion in educaciones %}
+						<tr>
+							<td><label ><b>Institucion:</b></label></td>
+							<td>{{ educacion.institucion }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Grado academico:</b></label></td>
+							<td>{{ educacion.grado_academico }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Especializacion:</b></label></td>
+							<td>{{ educacion.especializacion }}</td>
+						</tr><br>
+			 		{% endfor %}
+				</table><br>
+			{% endif %}
+			{% if habilidades %}
+			<h4 style="text-align: center;">Habilidades</h4>
+				<table style="margin: auto;">
+					{% for habilidad in habilidades %}
+						<tr>
+							<td><label ><b>Habilidad:</b></label></td>
+							<td>{{ habilidad.habilidad }}</td>
+						</tr>
+						<tr>
+							<td><label ><b>Grado de desarrollo:</b></label></td>
+							<td>{{ habilidad.grado_desarrollo }}</td>
+						</tr><br>
+			 		{% endfor %}
+				</table>
+			{% endif %}
+		</span>
+	{% endif %}
+{% endblock %}

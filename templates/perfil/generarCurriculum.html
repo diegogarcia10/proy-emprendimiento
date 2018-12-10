@@ -9,92 +9,239 @@
 
 {% block content %}
 <br><br>
-<form style="margin-left: 300px;" id="formCV">
+{% if curriculum == False %}
+ {% if empleado %}
+	<form style="margin-left: 300px;" id="formCV" method="POST">
+		{% csrf_token %}
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label for="nombre">Nombre</label>
+				<input type="text" class="form-control" name="txtNombre" id="txtNombre" value="{{ empleado.nombre_empleado }}" placeholder="Nombre" readonly>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="apellidos">Apellidos</label>
+				<input type="text" class="form-control" value="{{ empleado.apellidos_empleado }}" name="txtApellidos" id="txtApellidos" placeholder="Apellidos" readonly>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+		      <label for="inputEmail4">Email</label>
+		      <input type="email" class="form-control" value="{{ empleado.email }}" name="txtEmail" id="inputEmail4" placeholder="Email" readonly>
+			</div>
+			<div class="form-group col-md-4">
+		      <label for="inputTel">Telefono</label>
+		      <input type="text" class="form-control" value="{{ empleado.telefono }}" name="txtTelefono" id="inputTel" placeholder="Telefono" readonly>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-8">
+				<label for="inputAddress">Direccion</label>
+	    		<input type="text" class="form-control" value="{{ empleado.direccion }}" name="txtDireccion" id="inputDireccion" placeholder="Direccion real" readonly>
+			</div>
+		</div>
+		<div class="form-row">
+				<div class="form-group col-md-3">
+			      <label for="inputCiudad">Ciudad</label>
+			      <input type="text" class="form-control" name="txtCiudad" id="inputCiudad" placeholder="Ciudad actual de residencia">
+			    </div>
+			    <div class="form-group col-md-3">
+			      <label for="inputDepto">Departamento</label>
+			      <select id="inputDepto" name="slcDepartamento" class="form-control">
+			        <option selected>...Seleccione...</option>
+			        <option>San Salvador</option>
+			        <option>Santa Ana</option>
+			        <option>Ahuachapan</option>
+			        <option>La Libertad</option>
+			        <option>Usulutan</option>
+					<option>Cabañas</option>
+			        <option>La Union</option>
+			      </select>
+			    </div>
+			    <div class="form-group col-md-2">
+			      <label for="inputCodigo">Codigo depto.</label>
+			      <input type="text" name="txtCodDepto" class="form-control" id="inputCodigo" placeholder="codigo depto opcional">
+			    </div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-8">
+				<label for="inputObjetivo">Objetivo</label>
+				<textarea class="form-control" name="txtObjetivo" id="txtObjetivo" rows="3"></textarea>			
+			</div>
+		</div>
+
+		<input type="submit" class="btn btn-danger" name="btnGuardarCurriculum" value="Guardar">
+		&nbsp;&nbsp;<input type="button" class="btn btn-secondary" onclick="limpiar();" value="Limpiar"><br><br>
+	</form><br>	
+	{% endif %}
+{% endif %}
+
+{% if curriculum %}
 	<div class="form-row">
 		<div class="form-group col-md-4">
-			<label for="nombre">Nombre</label>
-			<input type="text" class="form-control" name="txtNombre" id="txtNombre" placeholder="Nombre">
+			<a style="padding-left: 300px;" href="#" data-toggle="modal" data-target="#modalExperiencia"><i class="fas fa-plus-circle fa-2x">Agregar experiencia</i></a>
 		</div>
-		<div class="form-group col-md-4">
-			<label for="apellidos">Apellidos</label>
-			<input type="text" class="form-control" name="txtApellidos" id="txtApellidos" placeholder="Apellidos">
-		</div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-4">
-	      <label for="inputEmail4">Email</label>
-	      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		</div>
-		<div class="form-group col-md-4">
-	      <label for="inputTel">Telefono</label>
-	      <input type="text" class="form-control" id="inputTel" placeholder="Telefono">
-		</div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-8">
-			<label for="inputAddress">Direccion</label>
-    		<input type="text" class="form-control" id="inputDireccion" placeholder="Direccion real">
-		</div>
-	</div>
-	<div class="form-row">
-			<div class="form-group col-md-3">
-		      <label for="inputCiudad">Ciudad</label>
-		      <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad actual de residencia">
-		    </div>
-		    <div class="form-group col-md-3">
-		      <label for="inputDepto">Departamento</label>
-		      <select id="inputDepto" class="form-control">
-		        <option selected>...Seleccione...</option>
-		        <option>San Salvador</option>
-		        <option>Santa Ana</option>
-		        <option>Ahuachapan</option>
-		        <option>La Libertad</option>
-		        <option>Usulutan</option>
-				<option>Cabañas</option>
-		        <option>La Union</option>
-		      </select>
-		    </div>
-		    <div class="form-group col-md-2">
-		      <label for="inputCodigo">Codigo depto.</label>
-		      <input type="text" class="form-control" id="inputCodigo" placeholder="codigo depto opcional">
-		    </div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-8">
-			<label for="inputObjetivo">Objetivo</label>
-			<textarea class="form-control" id="txtObjetivo" rows="3"></textarea>			
-		</div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-4">
-			<label for="addXP"><h4 class="cvH">Agregar experiencia</h4></label>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="agregarExp();"><i class="fas fa-plus-circle fa-2x"></i></a>
-		</div>
-	</div>
-	<div id="experiencia">
-		
 	</div><br>
+	
+
+<div class="modal" id="modalExperiencia" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">formulario Experiencia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" name="frmExperiencia">
+        	{% csrf_token %}
+        	<input type="text" name="curriculumExp" value="{{ curriculum.id }}" style="display: none;">
+        	<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Empresa</label>
+		    		<input type="text" class="form-control" name="txtEmpresa" placeholder="Empresa">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Ubicacion</label>
+		    		<input type="text" class="form-control" name="txtUbicacion" placeholder="Direccion empresa">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Puesto ejercido</label>
+		    		<input type="text" class="form-control" name="txtPuesto" placeholder="Puesto ejercido">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Tareas realizadas</label>
+		    		<input type="text" class="form-control" name="txtTareas" placeholder="Tareas realizadas">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Fecha entrada</label>
+		    		<input type="date" class="form-control" name="txtFechaEntrada">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Fecha salida</label>
+		    		<input type="date" class="form-control" name="txtFechaSalida">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Razon salida</label>
+		    		<input type="text" class="form-control" name="txtRazonSalida" placeholder="Explicacion breve">
+				</div>
+			</div>
+			<div class="modal-footer">
+		        <input type="submit" name="btnGuardarExp" class="btn btn-primary" value="Guardar">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 	<div class="form-row">
 		<div class="form-group col-md-4">
-			<label for="addEDU"><h4 class="cvH">Agregar Educacion</h4></label>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="agregarEducacion();"><i class="fas fa-plus-circle fa-2x"></i></a>
+		<a style="padding-left: 300px;" href="#" data-toggle="modal" data-target="#modalEducacion"><i class="fas fa-plus-circle fa-2x">Agregar Educacion</i></a>
 		</div>
-	</div>
-	<div id="educacion">
-		
 	</div><br>
+
+
+<div class="modal" id="modalEducacion" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">fomulario Educacion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" name="frmEducacion">
+        	{% csrf_token %}
+        	<input type="text" name="curriculumEdu" value="{{ curriculum.id }}" style="display: none;">
+        	<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Institucion</label>
+		    		<input type="text" class="form-control" name="txtInstitucion" placeholder="Nombre de la Institucion">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Grado academico</label>
+		    		<input type="text" class="form-control" name="txtGradoAcademico" placeholder="Grado academico">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Especializacion</label>
+		    		<input type="text" class="form-control" name="txtEspecializacion" placeholder="Especializacion">
+				</div>
+			</div>
+			<div class="modal-footer">
+		        <button type="submit" name="btnGuardarEdu" class="btn btn-primary">Guardar</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+	
+
+
 	<div class="form-row">
 		<div class="form-group col-md-4">
-				<label for="addHab"><h4 class="cvH">Agregar Habilidad</h4></label>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="agregarHabilidad();"><i class="fas fa-plus-circle fa-2x"></i></a>
+			<a style="padding-left: 300px;" href="#" data-toggle="modal" data-target="#modalHabilidad"><i class="fas fa-plus-circle fa-2x">Agregar Habilidad</i></a>
 		</div>
 	</div>
-	<div id="habilidades">
-		
-	</div>
-	<br>
-	<input type="button" class="btn btn-danger" value="Generar CV">
-	&nbsp;&nbsp;<input type="button" class="btn btn-secondary" onclick="limpiar();" value="Limpiar">
-</form>
+
+
+
+
+<div class="modal" id="modalHabilidad" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">formulario Habilidad</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" name="frmHabilidad">
+        	{% csrf_token %}
+        	<input type="text" name="curriculumHab" value="{{ curriculum.id }}" style="display: none;">
+        	<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Habilidad</label>
+		    		<input type="text" class="form-control" name="txtHabilidad" placeholder="Habilidad">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputAddress">Grado de desarrollo</label>
+		    		<input type="text" class="form-control" name="txtGradoDesarrollo" placeholder="Grado de desarrollo">
+				</div>
+			</div>
+			<div class="modal-footer">
+		        <button type="submit" name="btnGuardarHab" class="btn btn-primary">Guardar</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><br>
+{% endif %}
 <br><br>
 {% endblock %}
