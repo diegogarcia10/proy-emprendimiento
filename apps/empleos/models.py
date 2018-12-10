@@ -21,8 +21,9 @@ class Empleado(models.Model):
 	telefono = models.CharField(max_length = 9, null = True)
 	direccion = models.CharField(max_length = 80, null = True)
 	descripcion=models.CharField(max_length=150,null=True)
-	categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE)
-	foto=models.ImageField(upload_to='photos')
+	categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE, null = True)
+	foto=models.ImageField(upload_to='photos', null = True)
+
 
 class Curriculum(models.Model):
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)
@@ -58,7 +59,11 @@ class Empleador(models.Model):
 	direccion = models.CharField(max_length = 150)
 	telefono = models.CharField(max_length = 9)
 	email = models.CharField(max_length = 50)
-
+	def __str__(self): 
+    		return self.nombre_comercial
+	class Meta:
+        	ordering = ['nombre_comercial']
+        	
 class Contrato(models.Model):
 	empleador = models.ForeignKey(Empleador, on_delete = models.CASCADE)
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)
