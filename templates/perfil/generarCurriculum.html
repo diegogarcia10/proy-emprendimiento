@@ -10,33 +10,40 @@
 {% block content %}
 <br><br>
 {% if curriculum == False %}
- {% if empleado %}
 	<form style="margin-left: 300px;" id="formCV" method="POST">
 		{% csrf_token %}
 		<div class="form-row">
-			<div class="form-group col-md-4">
-				<label for="nombre">Nombre</label>
-				<input type="text" class="form-control" name="txtNombre" id="txtNombre" value="{{ empleado.nombre_empleado }}" placeholder="Nombre" readonly>
+			<div class="form-group col-md-2">
+				<label for="nombre">Codigo</label>
+				<input type="text" class="form-control" name="txtCodigo"  placeholder="Codigo">
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-3">
+				<label for="nombre">Nombre</label>
+				<input type="text" class="form-control" name="txtNombre"  placeholder="Nombre">
+			</div>
+			<div class="form-group col-md-3">
 				<label for="apellidos">Apellidos</label>
-				<input type="text" class="form-control" value="{{ empleado.apellidos_empleado }}" name="txtApellidos" id="txtApellidos" placeholder="Apellidos" readonly>
+				<input type="text" class="form-control"  name="txtApellidos" id="txtApellidos" placeholder="Apellidos" >
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-3">
 		      <label for="inputEmail4">Email</label>
-		      <input type="email" class="form-control" value="{{ empleado.email }}" name="txtEmail" id="inputEmail4" placeholder="Email" readonly>
+		      <input type="email" class="form-control"  name="txtEmail" id="inputEmail4" placeholder="Email" >
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-3">
 		      <label for="inputTel">Telefono</label>
-		      <input type="text" class="form-control" value="{{ empleado.telefono }}" name="txtTelefono" id="inputTel" placeholder="Telefono" readonly>
+		      <input type="text" class="form-control"  name="txtTelefono" id="inputTel" placeholder="Telefono" >
+			</div>
+			<div class="form-group col-md-2">
+		      <label for="inputTel">Fecha nacimiento</label>
+		      <input type="date" class="form-control"  name="txtFechaNac" id="inputTel" placeholder="Telefono" >
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-8">
 				<label for="inputAddress">Direccion</label>
-	    		<input type="text" class="form-control" value="{{ empleado.direccion }}" name="txtDireccion" id="inputDireccion" placeholder="Direccion real" readonly>
+	    		<input type="text" class="form-control"  name="txtDireccion" id="inputDireccion" placeholder="Direccion real" >
 			</div>
 		</div>
 		<div class="form-row">
@@ -72,7 +79,6 @@
 		<input type="submit" class="btn btn-danger" name="btnGuardarCurriculum" value="Guardar">
 		&nbsp;&nbsp;<input type="button" class="btn btn-secondary" onclick="limpiar();" value="Limpiar"><br><br>
 	</form><br>	
-	{% endif %}
 {% endif %}
 
 {% if curriculum %}

@@ -11,16 +11,34 @@ class vistaPerfil(TemplateView):
 	template_name="perfil/perfil.html"
 
 def generarCurriculum(request):
-	empleado = Empleado.objects.get(usuario_empleado__username = request.user)
-	curriculum_e = Curriculum.objects.filter(empleado = empleado).exists()
-	if curriculum_e:
-		curriculum = Curriculum.objects.get(empleado = empleado)
-		pass
-	else:
-		curriculum = False
-
-	if 'btnGuardarCurriculum' in request.POST:
+	empleado_e = Empleado.objects.filter(usuario_empleado__username = request.user).exists()
+	curriculum = False
+	empleado = False
+	if empleado_e:
 		empleado = Empleado.objects.get(usuario_empleado__username = request.user)
+		curriculum_e = Curriculum.objects.filter(empleado = empleado).exists()
+		if curriculum_e:
+			curriculum = Curriculum.objects.get(empleado = empleado)
+			pass
+		else:
+			curriculum = False
+			pass
+		pass
+	
+	if 'btnGuardarCurriculum' in request.POST:
+		usuario = User.objects.get(username = request.user)
+		codigo_empleado =  request.POST['txtCodigo']
+		nombre_empleado = request.POST['txtNombre']
+		apellidos_empleado = request.POST['txtApellidos']
+		fecha_nacimiento = request.POST['txtObjetivo']
+		tipo_empleado = 'Emprendedor'
+		puntuacion = 0.00
+		email = request.POST['txtEmail']
+		telefono = request.POST['txtTelefono']
+		direccion = request.POST['txtDireccion'] 
+		fecha_nacimiento = request.POST['txtFechaNac']
+		empleado = Empleado(usuario_empleado = usuario,codigo_empleado = codigo_empleado,nombre_empleado = nombre_empleado,apellidos_empleado = apellidos_empleado,fecha_nacimiento = fecha_nacimiento,tipo_empleado = tipo_empleado,puntuacion = puntuacion,email = email,telefono = telefono,direccion = direccion)
+		empleado.save()
 		objetivo = request.POST['txtObjetivo']
 		curriculum = Curriculum(empleado = empleado, objetivo = objetivo)
 		curriculum.save()
@@ -61,6 +79,7 @@ def generarCurriculum(request):
 
 	contexto = {'curriculum':curriculum, 'empleado':empleado}
 	return render(request, 'perfil/generarCurriculum.html',contexto)
+	
 
 def verCurriculum(request):
 	empleado = Empleado.objects.get(usuario_empleado__username = request.user)

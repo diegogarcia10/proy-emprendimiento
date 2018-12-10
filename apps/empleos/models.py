@@ -21,8 +21,9 @@ class Empleado(models.Model):
 	telefono = models.CharField(max_length = 9, null = True)
 	direccion = models.CharField(max_length = 80, null = True)
 	descripcion=models.CharField(max_length=150,null=True)
-	categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE)
-	foto=models.ImageField(upload_to='photos')
+	categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE, null = True)
+	foto=models.ImageField(upload_to='photos', null = True)
+
 
 class Curriculum(models.Model):
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)
