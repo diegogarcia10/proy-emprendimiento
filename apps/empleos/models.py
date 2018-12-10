@@ -1,5 +1,13 @@
 from django.db import models
 
+class Categoria(models.Model):
+	nombre_categoria = models.CharField(max_length = 50)
+	descripcion = models.CharField(max_length = 200)
+	def __str__(self): 
+    		return self.nombre_categoria
+	class Meta:
+        	ordering = ['nombre_categoria']
+
 class Empleado(models.Model):
 	codigo_empleado = models.CharField(max_length = 20, primary_key = True)
 	nombre_empleado = models.CharField(max_length= 50, null = False)
@@ -11,6 +19,8 @@ class Empleado(models.Model):
 	telefono = models.CharField(max_length = 9, null = True)
 	direccion = models.CharField(max_length = 80, null = True)
 	descripcion=models.CharField(max_length=150,null=True)
+
+
 class Curriculum(models.Model):
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)
 	objetivo = models.CharField(max_length = 150, null = True)
@@ -62,9 +72,7 @@ class Referencias(models.Model):
 	puntuacion_empleador = models.FloatField()
 	referencia_empleador = models.CharField(max_length = 200, null = True)
 
-class Categoria(models.Model):
-	nombre_categoria = models.CharField(max_length = 50)
-	descripcion = models.CharField(max_length = 200)
+
 
 class PerfilBuscado(models.Model):
 	nombre_perfil = models.CharField(max_length = 150)
