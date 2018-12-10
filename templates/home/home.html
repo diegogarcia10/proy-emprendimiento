@@ -1,17 +1,89 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block title %} Inicio {% endblock %}
 
 
 {% block intro %}
-<section id="intro" style="height: 100px;">
-</section>
+ <section id="intro">
+    <div vocab="http://schema.org/" typeof="WebSite" class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/1.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Somos profesionales</h2>
+                <p property="description">La Plataforma Web mas interactiva del mundo ofreciendo servicios creados por la misma comunidad perteneciente al sitio, permitiendo la comunicacion, Contratacion y busqueda de empleo formal u informal.</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/2.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Una Red de Empleos</h2>
+                <p property="text">Una comunidad comprometida con el amplio desarrollo del empleo donde encontraras empresas que deseen contratar personas con cualidades especificas, o tambien encontraras personas que contraten a otras personas con habilidades de cualquier tipo para que hagan una deterrminada actividad</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/3.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Tus Habilidades Como Persona</h2>
+                <p property="text">Es uno de nuestros pilares y lo que mas nos importa de ti que puedas dar a conocer tus conocimientos en determinadas actividades con el fin de que te contraten.</p>
+               	
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/4.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Tus Propositos como Empresa</h2>
+                <p property="text">Aqui encontraras un amplio numero de personas con ganas de trabajar con habilidades y cualidades a la medida de lo que tu buscas.</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img property="image" src="{% static 'img/intro-carousel/5.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Publicaciones</h2>
+                <p property="text">Podras ver tu como usuario de esta plataforma las diferentes ofertas laborales que hacen las diferentes empresas en las cuales puedes ya sea examinarte con un test hecho por la empresa o simplemente ponerte en contacto con la misma</p>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
 {% endblock %}
 {% block content %}
 
-<h2>Contenido</h2>
-<br>
-<h3>Info</h3>
-<br>
-<br>
 {% endblock %}
