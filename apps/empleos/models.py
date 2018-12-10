@@ -1,6 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Empleado(models.Model):
+	usuario_empleado = models.ForeignKey(User, on_delete = models.CASCADE)
 	codigo_empleado = models.CharField(max_length = 20, primary_key = True)
 	nombre_empleado = models.CharField(max_length= 50, null = False)
 	apellidos_empleado = models.CharField(max_length = 50)
@@ -37,6 +39,7 @@ class ExperienciaLaboral(models.Model):
 	razon_salida = models.CharField(max_length = 150)
 
 class Empleador(models.Model):
+	usuario_empleador = models.ForeignKey(User, on_delete = models.CASCADE)
 	codigo_empleador = models.CharField(max_length = 50, primary_key = True)
 	nombre_comercial = models.CharField(max_length = 50)
 	tipo_empleador = models.CharField(max_length = 25)
