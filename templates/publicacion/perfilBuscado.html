@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Inicio {% endblock %}
+
+
+{% block intro %}
+<section id="intro" style="height: 100px;">
+</section>
+{% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" class="btn btn-primary">Guardar</button>
+	<a href="{% url 'crearPublicacion' %}" class="btn btn-warning">Volver a Crear Publicacion</a>
+</form>
+{% endblock %}

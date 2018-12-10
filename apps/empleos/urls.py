@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^buscar/',busqueda, name='buscar-empleado'),
     url(r'^acercade',vistaAcercaDeNosotros.as_view(),name="acercadenosotros"),
     url(r'^verCurriculum/', verCurriculum, name = 'verCurriculum'),
-    
+   
 
     
     path('',categorias, name= "categoria"),  
