@@ -10,14 +10,14 @@ urlpatterns = [
 	url(r'crearPublicacion', crearPublicacion.as_view(), name= 'crearPublicacion'),
     url(r'^buscar/',busqueda, name='buscar-empleado'),
     url(r'^acercade',vistaAcercaDeNosotros.as_view(),name="acercadenosotros"),
-<<<<<<< HEAD
+
     
 
     
     path('',categorias, name= "categoria"),  
     url(r'^(?P<cat>\d+)/$',categorias,name="categoria1"),
     
-=======
+
 	url(r'^busq/$', busquedaAjaxView,name='busq'),
->>>>>>> bc8a5922131266106511d2bdbfa0486e634a4366
+
 ]
