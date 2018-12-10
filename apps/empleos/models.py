@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Categoria(models.Model):
 	nombre_categoria = models.CharField(max_length = 50)
@@ -9,6 +10,7 @@ class Categoria(models.Model):
         	ordering = ['nombre_categoria']
 
 class Empleado(models.Model):
+	usuario_empleado = models.ForeignKey(User, on_delete = models.CASCADE)
 	codigo_empleado = models.CharField(max_length = 20, primary_key = True)
 	nombre_empleado = models.CharField(max_length= 50, null = False)
 	apellidos_empleado = models.CharField(max_length = 50)
@@ -19,7 +21,7 @@ class Empleado(models.Model):
 	telefono = models.CharField(max_length = 9, null = True)
 	direccion = models.CharField(max_length = 80, null = True)
 	descripcion=models.CharField(max_length=150,null=True)
-
+	categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE)
 
 class Curriculum(models.Model):
 	empleado = models.ForeignKey(Empleado, on_delete = models.CASCADE)
@@ -47,6 +49,7 @@ class ExperienciaLaboral(models.Model):
 	razon_salida = models.CharField(max_length = 150)
 
 class Empleador(models.Model):
+	usuario_empleador = models.ForeignKey(User, on_delete = models.CASCADE)
 	codigo_empleador = models.CharField(max_length = 50, primary_key = True)
 	nombre_comercial = models.CharField(max_length = 50)
 	tipo_empleador = models.CharField(max_length = 25)
